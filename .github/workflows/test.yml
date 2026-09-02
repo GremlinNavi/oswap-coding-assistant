@@ -1,0 +1,20 @@
+name: OSWAP Coding Assistant tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-tests:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: PowerShell and dictionary self-test
+        shell: powershell
+        run: .\tests\Test-OSWAPCodingAssistant.ps1
+      - name: Release validation
+        shell: powershell
+        run: .\tests\Test-OSWAPRelease.ps1

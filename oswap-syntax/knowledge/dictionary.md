@@ -3,13 +3,17 @@
 Canonical form:
 
 ```text
-oswap dictionary lookup lang=<BCP47> term=<TEXT>
+oswap dictionary lookup lang=<LANGUAGE-TAG> term=<TEXT>
 ```
 
-The dictionary layer is local-first. OSWAP does not vendor multi-gigabyte dictionary databases into the core source repository. Instead, licensed source data is normalized into per-language JSONL indexes under `oswap-syntax/data/dictionaries/` and queried by `Invoke-OSWAPDictionary.ps1`.
+Version 0.1.0 accepts a constrained BCP 47-style language-tag subset. The dictionary layer is local-first and performs no network call during lookup.
 
-The source manifest is `oswap-syntax/resources/dictionaries.json`. Every generated index should retain enough metadata to identify the upstream dataset, edition/dump date where available, licence, and attribution requirements.
+Licensed source data is normalized into JSONL indexes under `oswap-syntax/data/dictionaries/`. `oswap-syntax/schema/dictionary-record.schema.json` defines OSWAP Dictionary Record v1.
 
-Initial source adapters target Wiktionary/Wiktextract/Kaikki for broad multilingual coverage and JMdict for specialist Japanese multilingual lexicography. Source content is not relicensed as Apache-2.0 merely because the OSWAP integration code is Apache-2.0; dictionary data retains its upstream licence.
+Conforming lookup records MUST include `word`, `lang_code`, `source`, and `license`. Optional upstream fields may be retained. Records missing source or licence metadata are ignored by the reference lookup implementation.
 
-Dictionary lookup performs no network call by default and does not ask an LLM to invent a definition when a local source has no match.
+The source manifest is `oswap-syntax/resources/dictionaries.json`. Generated indexes SHOULD retain dataset edition/dump date, source URL, attribution text, and other provenance where available.
+
+Initial source targets are Wiktionary/Wiktextract/Kaikki for broad multilingual coverage and JMdict for specialist Japanese multilingual lexicography. Local JSONL lookup is implemented; Kaikki and JMdict import/normalization adapters are planned.
+
+Source content is never relicensed as Apache-2.0 merely because OSWAP integration code is Apache-2.0. Dictionary lookup also does not ask an LLM to invent a definition when a local source has no match.

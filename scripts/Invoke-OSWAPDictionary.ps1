@@ -31,6 +31,9 @@ foreach ($file in $files) {
         if ($results.Count -ge $Limit) { break }
         if ([string]::IsNullOrWhiteSpace($line)) { continue }
         try { $entry = $line | ConvertFrom-Json } catch { continue }
+        $source = if ($entry.PSObject.Properties.Name -contains 'source') { [string]$entry.source } else { '' }
+        $license = if ($entry.PSObject.Properties.Name -contains 'license') { [string]$entry.license } else { '' }
+        if ([string]::IsNullOrWhiteSpace($source) -or [string]::IsNullOrWhiteSpace($license)) { continue }
         $word = if ($entry.PSObject.Properties.Name -contains 'word') { [string]$entry.word } elseif ($entry.PSObject.Properties.Name -contains 'term') { [string]$entry.term } else { '' }
         if (-not $word.Equals($needle, [StringComparison]::OrdinalIgnoreCase)) { continue }
         $entryLanguage = if ($entry.PSObject.Properties.Name -contains 'lang_code') { [string]$entry.lang_code } elseif ($entry.PSObject.Properties.Name -contains 'language') { [string]$entry.language } else { $baseLanguage }

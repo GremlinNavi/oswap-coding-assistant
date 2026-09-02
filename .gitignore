@@ -11,3 +11,9 @@ models/
 *.log
 .vscode/
 .idea/
+
+# Deployment/runtime secrets
+.env
+.env.*
+deployment/*.env
+!deployment/*.example.env
