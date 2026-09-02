@@ -1,0 +1,8 @@
+OSWAP Coding Assistant
+Copyright 2026 Zoey Prowse
+
+OSWAP-authored source code and documentation in this repository are licensed under Apache-2.0 unless a file states otherwise.
+
+Dictionary datasets are not relicensed by this repository. Operators must preserve each upstream source's attribution, provenance, and licence metadata. The source manifest under oswap-syntax/resources/dictionaries.json describes intended adapters and licensing boundaries.
+
+Local language models are separate works distributed under their own licences. OSWAP Coding Assistant does not redistribute model weights by default.

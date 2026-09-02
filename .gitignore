@@ -1,0 +1,13 @@
+# Local dictionary indexes and generated data
+oswap-syntax/data/
+*.jsonl
+*.jsonl.gz
+
+# Local model/runtime artifacts
+models/
+.ollama/
+
+# PowerShell/editor noise
+*.log
+.vscode/
+.idea/
