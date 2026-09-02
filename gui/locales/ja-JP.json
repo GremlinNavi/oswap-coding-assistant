@@ -1,0 +1,13 @@
+{
+  "locale": "ja-JP",
+  "app_name": "OSWAP コーディングアシスタント",
+  "tagline": "ローカル優先の多言語 PowerShell 支援",
+  "assistant_title": "PowerShell アシスタント",
+  "dictionary_title": "辞書",
+  "prompt_label": "PowerShell の作業内容を入力してください",
+  "ask_button": "アドバイスを求める",
+  "lookup_button": "検索",
+  "language_label": "言語",
+  "local_status": "ローカル推論",
+  "human_review_notice": "生成されたコードは実行前に人間が確認する必要があります。"
+}

@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "policy": {
+    "hardcode_domains_in_application_code": false,
+    "tls_required": true,
+    "dns_provider_reference": "Cloudflare",
+    "deployment_credentials_in_repository": false,
+    "standard_subdomains": ["www", "ai", "code", "docs"]
+  },
+  "sites": [
+    {
+      "id": "ca",
+      "apex": "oswap.ca",
+      "region": "CA",
+      "default_locale": "en-CA",
+      "ui_locales": ["en-CA", "fr-CA"],
+      "language_policy": {
+        "kind": "official-languages",
+        "note": "English and French are Canada's official languages."
+      },
+      "hostnames": {
+        "www": "www.oswap.ca",
+        "ai": "ai.oswap.ca",
+        "code": "code.oswap.ca",
+        "docs": "docs.oswap.ca"
+      },
+      "deployment": {
+        "target_env": "OSWAP_DEPLOY_TARGET_CA",
+        "record_type_preference": "CNAME"
+      },
+      "reference": "https://justice.canada.ca/eng/csj-sjc/rfc-dlc/ccrf-ccdl/check/art16.html"
+    },
+    {
+      "id": "us",
+      "apex": "oswap.us",
+      "region": "US",
+      "default_locale": "en-US",
+      "ui_locales": ["en-US"],
+      "language_policy": {
+        "kind": "official-language",
+        "note": "English is designated the official language of the United States by Executive Order 14224; additional UI languages may still be offered."
+      },
+      "hostnames": {
+        "www": "www.oswap.us",
+        "ai": "ai.oswap.us",
+        "code": "code.oswap.us",
+        "docs": "docs.oswap.us"
+      },
+      "deployment": {
+        "target_env": "OSWAP_DEPLOY_TARGET_US",
+        "record_type_preference": "CNAME"
+      },
+      "reference": "https://www.whitehouse.gov/presidential-actions/2025/03/designating-english-as-the-official-language-of-the-united-states/"
+    },
+    {
+      "id": "jp",
+      "apex": "oswap.jp",
+      "region": "JP",
+      "default_locale": "ja-JP",
+      "ui_locales": ["ja-JP"],
+      "language_policy": {
+        "kind": "national-government-language",
+        "note": "Japanese is the national/government language used for this OSWAP profile; Japan does not have a specific statute declaring an official language."
+      },
+      "hostnames": {
+        "www": "www.oswap.jp",
+        "ai": "ai.oswap.jp",
+        "code": "code.oswap.jp",
+        "docs": "docs.oswap.jp"
+      },
+      "deployment": {
+        "target_env": "OSWAP_DEPLOY_TARGET_JP",
+        "record_type_preference": "CNAME"
+      },
+      "reference": "https://www.japan.go.jp/japan/index.html"
+    }
+  ]
+}

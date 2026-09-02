@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://oswap.ca/schema/dictionary-record-v1.json",
+  "title": "OSWAP Dictionary Record v1",
+  "type": "object",
+  "required": ["word", "lang_code", "source", "license"],
+  "properties": {
+    "word": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "lang_code": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 64,
+      "description": "BCP 47-style language tag used by the normalized index."
+    },
+    "source": {
+      "type": "string",
+      "minLength": 1
+    },
+    "license": {
+      "type": "string",
+      "minLength": 1
+    },
+    "pos": { "type": "string" },
+    "senses": { "type": "array" },
+    "source_url": { "type": "string", "format": "uri" },
+    "source_version": { "type": "string" },
+    "source_date": { "type": "string" },
+    "attribution": { "type": "string" },
+    "pronunciation": {},
+    "forms": { "type": "array" },
+    "etymology": {},
+    "translations": { "type": "array" },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": true,
+  "$comment": "OSWAP adapters may retain upstream fields, but every conforming record must preserve word, language, source, and licence metadata."
+}

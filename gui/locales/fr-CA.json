@@ -1,0 +1,13 @@
+{
+  "locale": "fr-CA",
+  "app_name": "Assistant de programmation OSWAP",
+  "tagline": "Assistance PowerShell multilingue et locale par défaut",
+  "assistant_title": "Assistant PowerShell",
+  "dictionary_title": "Dictionnaire",
+  "prompt_label": "Décrivez votre tâche PowerShell",
+  "ask_button": "Demander conseil",
+  "lookup_button": "Rechercher",
+  "language_label": "Langue",
+  "local_status": "Inférence locale",
+  "human_review_notice": "Le code généré doit être examiné par une personne avant son exécution."
+}
