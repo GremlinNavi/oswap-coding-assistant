@@ -66,6 +66,12 @@ GUI string bundles live under `gui/locales/`. Locale-sensitive formatting should
 
 See `docs/DOMAIN_INTEGRATION.md` and `docs/LOCALIZATION.md`.
 
+## LLM-Assisted Console Parser integration
+
+`docs/LLM_ASSISTED_CONSOLE_PARSER.md` defines how this local-first assistant may participate in the planned OSWAP LLM-Assisted Console Parser. The model may normalize multilingual, typo-tolerant, or informal console text into a typed parse candidate, but it remains advisory: deterministic OSWAP validation, effect classification, consent, tool resolution, and execution stay outside the model.
+
+The integration document also records the planned explicit `@Tool` invocation convention, context provenance requirements, experimental intent envelopes, and the rule that model output must never be treated as automatically executable shell code.
+
 ## Safety boundary
 
 The coding assistant can explain or generate PowerShell text, but it cannot execute commands, write files, commit changes, or publish repositories. Human review remains the execution boundary. See `SECURITY.md`.
