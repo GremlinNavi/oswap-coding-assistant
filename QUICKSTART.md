@@ -39,13 +39,17 @@ Place licensed, normalized JSONL records under `oswap-syntax/data/dictionaries/`
 
 Dictionary source datasets are not bundled by default.
 
-## Resolve an international site profile
+## Resolve a planned international site profile locally
+
+OSWAP has registered `oswap.ca`, `oswap.us`, and `oswap.jp` for planned future infrastructure. The corresponding websites and subdomains are not represented here as currently deployed or online.
+
+The following command tests only the local manifest resolver:
 
 ```powershell
 .\scripts\Get-OSWAPSiteProfile.ps1 -Hostname ai.oswap.ca
 ```
 
-The result identifies the region, default GUI locale, supported locales, and configured OSWAP hostnames without hard-coding them into application logic.
+It does not perform a DNS lookup or contact `ai.oswap.ca`. The result identifies the planned region, default GUI locale, supported locales, and configured hostname labels without hard-coding them into application logic.
 
 ## Optional local-model integration check
 
