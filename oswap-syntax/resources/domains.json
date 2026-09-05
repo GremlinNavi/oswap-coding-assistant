@@ -1,10 +1,14 @@
 {
   "version": 1,
+  "status": "planned_not_online",
+  "status_note": "The OSWAP domains are registered for future infrastructure. This manifest does not assert that any OSWAP website or subdomain is currently deployed or reachable.",
   "policy": {
     "hardcode_domains_in_application_code": false,
     "tls_required": true,
     "dns_provider_reference": "Cloudflare",
     "deployment_credentials_in_repository": false,
+    "domains_registered": true,
+    "public_services_deployed": false,
     "standard_subdomains": ["www", "ai", "code", "docs"]
   },
   "sites": [
@@ -12,6 +16,7 @@
       "id": "ca",
       "apex": "oswap.ca",
       "region": "CA",
+      "deployment_status": "planned_not_online",
       "default_locale": "en-CA",
       "ui_locales": ["en-CA", "fr-CA"],
       "language_policy": {
@@ -34,6 +39,7 @@
       "id": "us",
       "apex": "oswap.us",
       "region": "US",
+      "deployment_status": "planned_not_online",
       "default_locale": "en-US",
       "ui_locales": ["en-US"],
       "language_policy": {
@@ -56,6 +62,7 @@
       "id": "jp",
       "apex": "oswap.jp",
       "region": "JP",
+      "deployment_status": "planned_not_online",
       "default_locale": "ja-JP",
       "ui_locales": ["ja-JP"],
       "language_policy": {
