@@ -52,15 +52,19 @@ Dictionary datasets are not vendored into this repository. Licensed data is norm
 
 The source manifest identifies Wiktionary/Wiktextract/Kaikki for broad multilingual coverage and JMdict for specialist Japanese coverage. Import adapters are planned; local JSONL lookup is implemented.
 
-## International GUI and domain profiles
+## International GUI and planned domain profiles
 
-`oswap-syntax/resources/domains.json` keeps hostnames and locale policy out of application code. Initial profiles are:
+`oswap-syntax/resources/domains.json` keeps planned hostname and locale policy out of application code.
+
+OSWAP has registered `oswap.ca`, `oswap.us`, and `oswap.jp`, but this repository does not represent any OSWAP website or subdomain on those domains as currently deployed or online.
+
+The current manifest contains planned profiles for:
 
 - `oswap.ca` → `en-CA`, `fr-CA`
 - `oswap.us` → `en-US`
 - `oswap.jp` → `ja-JP`
 
-Consistent `www`, `ai`, `code`, and `docs` subdomain labels are reserved in the manifest. Deployment targets and credentials are intentionally not stored in the repository.
+Consistent `www`, `ai`, `code`, and `docs` labels are reserved in the manifest for future deployment. They are configuration identities, not claims of DNS resolution or service availability. Deployment targets and credentials are intentionally not stored in the repository.
 
 GUI string bundles live under `gui/locales/`. Locale-sensitive formatting should use platform internationalization APIs backed by Unicode CLDR rather than hand-coded cultural rules.
 
